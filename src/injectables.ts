@@ -35,9 +35,7 @@ export function dep(alias?: string) {
       : Reflect.getMetadata("design:paramtypes", target)[parameterIndex];
 
     if (inject && Reflect.has(inject, "isExtensible")) {
-      throw new Error(
-        `You can't inject interfaces or objects without an alias`
-      );
+      throw new Error(`Alias needed to inject interfaces or objects`);
     }
 
     let injects = Reflect.getOwnMetadata(INJECTIONS_CLASS, target) || [];
