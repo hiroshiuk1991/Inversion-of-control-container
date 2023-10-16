@@ -15,10 +15,7 @@ export function injectable(constructorFunction: Function) {
   }
 }
 
-/**
- * Decorator to get constructor dependencies
- * @param {string} alias
- */
+// Decorator to get constructor dependencies @param {string} alias
 export function dep(alias?: string) {
   return function (
     target: Function,
@@ -35,7 +32,7 @@ export function dep(alias?: string) {
       : Reflect.getMetadata("design:paramtypes", target)[parameterIndex];
 
     if (inject && Reflect.has(inject, "isExtensible")) {
-      throw new Error(`Alias needed to inject interfaces or objects`);
+      throw new Error(`An Alias is needed to inject interfaces or objects`);
     }
 
     let injects = Reflect.getOwnMetadata(INJECTIONS_CLASS, target) || [];
