@@ -118,6 +118,8 @@ export class IoCContainer {
     this.addInstance(instance, Instance.name);
   }
 
+  // Helper functions for the Register and Resolve functons.
+
   /**
    * Retrieves an instantiated class registered with the container.
    * @param {string} name the name of the class to retrieve.
@@ -160,10 +162,7 @@ export class IoCContainer {
     return null;
   }
 
-  /**
-   * Removes the cached instances, aliases, and injectables.
-   * @returns {void}
-   */
+  // Removes the cached instances, aliases, and injectables. @returns {void}
   public dispose(): void {
     this.injectables.length = 0;
 
@@ -177,4 +176,5 @@ export class IoCContainer {
   }
 }
 
+// Return new container based on class created
 export const container = new IoCContainer();
