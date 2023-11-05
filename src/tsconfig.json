@@ -5,6 +5,8 @@
     "strict": true,
     "esModuleInterop": true,
     "baseUrl": "./",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "paths": {
       "@/*": ["src/*"]
     }
